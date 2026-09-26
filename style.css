@@ -107,7 +107,8 @@ nav.section-nav a {
 }
 
 nav.section-nav a:hover,
-nav.section-nav a:focus-visible {
+nav.section-nav a:focus-visible,
+nav.section-nav a.active {
   color: var(--black);
   border-bottom-color: var(--black);
 }
