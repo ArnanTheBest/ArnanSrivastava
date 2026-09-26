@@ -15,6 +15,8 @@ beltivator-v3.jpg
 5667-2025-bot.jpg
 5667-2026-bot.jpg
 stub-roller-system.jpg
+frcelectrical.jpg
+2025-frc-field.jpg
 light-cap.jpg
 jewelry-stand.jpg
 configurable-circular-threaded-box.jpg
