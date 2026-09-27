@@ -286,11 +286,12 @@ footer {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   overflow: hidden;
   position: relative;
   min-height: 200px;
   display: flex;
+  max-width: 780px;
 }
 
 .detail-thumb img {
@@ -321,7 +322,9 @@ footer {
 
 .detail-desc {
   font-size: 19px;
-  max-width: 70ch;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .detail-subhead {
@@ -337,12 +340,13 @@ footer {
 .gallery {
   position: relative;
   width: 100%;
+  max-width: 780px;
   aspect-ratio: 3296 / 2547;
   border-radius: 12px;
   overflow: hidden;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
 }
 
 .gallery img {
@@ -354,10 +358,11 @@ footer {
 
 .gallery-btn {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 15%;
-  min-width: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: none;
   border: none;
   cursor: pointer;
@@ -365,28 +370,30 @@ footer {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 28px;
+  font-size: 20px;
   font-family: inherit;
+  transition: background 0.15s ease;
 }
 
 .gallery-btn:hover,
 .gallery-btn:focus-visible {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .gallery-btn.prev {
-  left: 0;
+  left: 10px;
 }
 
 .gallery-btn.next {
-  right: 0;
+  right: 10px;
 }
 
 .gallery-counter {
   text-align: center;
   font-size: 13px;
   color: var(--white);
-  margin: 0 0 16px;
+  margin: 0 auto 16px;
+  max-width: 780px;
 }
 
 .desc a {
