@@ -336,7 +336,7 @@ footer {
   left: 0;
   height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   pointer-events: none;
 }
 
@@ -368,8 +368,8 @@ footer {
 .compare-range {
   position: absolute;
   bottom: 10px;
-  left: 5%;
-  width: 90%;
+  left: 0;
+  width: 100%;
   margin: 0;
 }
 
