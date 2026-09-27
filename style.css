@@ -76,12 +76,12 @@ header.hero h1 {
 }
 
 header.hero p.tagline {
-  font-size: 14px;
+  font-size: 20px;
   margin: 0 0 12px;
 }
 
 header.hero p.intro {
-  font-size: 15px;
+  font-size: 22px;
   margin: 0 0 20px;
   max-width: 60ch;
 }
@@ -104,7 +104,7 @@ nav.section-nav {
 }
 
 nav.section-nav a {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
@@ -124,19 +124,19 @@ section.category {
 }
 
 section.category h2 {
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 700;
   margin: 0 0 6px;
 }
 
 section.category .category-note {
-  font-size: 13px;
+  font-size: 18px;
   margin: 0 0 20px;
   max-width: 60ch;
 }
 
 h3.subgroup {
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 700;
   margin: 28px 0 12px;
   opacity: 0.9;
@@ -153,7 +153,7 @@ h3.subgroup {
 .progression-row .arrow {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 24px;
   padding-top: 40px;
   flex: 0 0 auto;
 }
@@ -184,7 +184,7 @@ h3.subgroup {
 }
 
 .card h4 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0;
 }
@@ -212,7 +212,7 @@ h3.subgroup {
   justify-content: center;
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 8px;
@@ -223,7 +223,7 @@ h3.subgroup {
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 10px 12px;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 0;
 }
@@ -234,7 +234,7 @@ h3.subgroup {
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 14px 16px;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -257,7 +257,7 @@ footer {
 .back-link {
   display: inline-block;
   color: var(--white);
-  font-size: 13px;
+  font-size: 18px;
   text-decoration: none;
   margin-bottom: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -294,20 +294,20 @@ footer {
   justify-content: center;
   width: 100%;
   min-height: 200px;
-  font-size: 14px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
   padding: 12px;
 }
 
 .detail-frame h1 {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 700;
   margin: 0 0 12px;
 }
 
 .detail-desc {
-  font-size: 15px;
+  font-size: 19px;
   max-width: 70ch;
 }
 
