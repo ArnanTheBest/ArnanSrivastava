@@ -7,19 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=4">
+<link rel="stylesheet" href="../style.css?v=5">
 </head>
 <body>
 <div class="site-frame detail-frame">
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
-  <div class="compare-slider" id="cc-slider">
-    <img class="compare-image" src="../images/cadathon-bot-crystal-caverns-block.png" alt="block CAD">
-    <div class="compare-overlay" id="cc-overlay">
-      <img class="compare-image compare-overlay-img" id="cc-overlay-img" src="../images/cadathon-bot-crystal-caverns-full.png" alt="full-detail CAD">
-    </div>
-    <div class="compare-line" id="cc-line"></div>
-    <input type="range" class="compare-range" id="cc-range" min="0" max="100" value="50" aria-label="Reveal high-detail CAD">
+  <div style="position:relative; margin-bottom:8px;">
+    <canvas id="cc-canvas" width="1200" height="927" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--card-border); background:var(--card-bg);"></canvas>
   </div>
+  <input type="range" class="compare-range-plain" id="cc-range" min="0" max="100" value="50" aria-label="Reveal high-detail CAD" style="width:100%;">
   <p class="desc" style="margin-top:10px; font-size:15px;">Drag left/right - block CAD on the left, the high-detail CAD it became on the right.</p>
 
   <h1>CADathon bot - Crystal Caverns</h1>
@@ -27,25 +23,59 @@
 </div>
 <script>
   (function () {
-    var slider = document.getElementById('cc-slider');
-    var overlay = document.getElementById('cc-overlay');
-    var overlayImg = document.getElementById('cc-overlay-img');
-    var line = document.getElementById('cc-line');
+    var canvas = document.getElementById('cc-canvas');
+    var ctx = canvas.getContext('2d');
     var range = document.getElementById('cc-range');
+    var W = canvas.width;
+    var H = canvas.height;
 
-    function update() {
-      var pct = range.value;
-      var rect = slider.getBoundingClientRect();
-      overlay.style.width = pct + '%';
-      overlayImg.style.width = rect.width + 'px';
-      line.style.left = pct + '%';
+    var blockImg = new Image();
+    var fullImg = new Image();
+    var loaded = 0;
+
+    function onLoad() {
+      loaded++;
+      if (loaded === 2) draw();
+    }
+    blockImg.onload = onLoad;
+    fullImg.onload = onLoad;
+    blockImg.src = '../images/cadathon-bot-crystal-caverns-block.png';
+    fullImg.src = '../images/cadathon-bot-crystal-caverns-full.png';
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(blockImg, 0, 0, W, H);
+
+      var pct = Number(range.value);
+      var revealPx = W * pct / 100;
+
+      if (revealPx > 0) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(0, 0, revealPx, H);
+        ctx.clip();
+
+        var nw = fullImg.naturalWidth || 3296;
+        var nh = fullImg.naturalHeight || 2547;
+        var scale = 1.13;
+        var anchorX = 0.231;
+        var anchorY = 0.251;
+        var cropW = nw / scale;
+        var cropH = nh / scale;
+        var cropX = anchorX * nw - anchorX * cropW;
+        var cropY = anchorY * nh - anchorY * cropH;
+
+        ctx.drawImage(fullImg, cropX, cropY, cropW, cropH, 0, 0, W, H);
+        ctx.restore();
+      }
+
+      if (revealPx > 0 && revealPx < W) {
+        ctx.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx.fillRect(revealPx - 1, 0, 2, H);
+      }
     }
 
-    range.addEventListener('input', update);
-    window.addEventListener('resize', update);
-    window.addEventListener('load', update);
-    overlayImg.addEventListener('load', update);
-    update();
+    range.addEventListener('input', draw);
   })();
 </script>
 </body>

@@ -318,66 +318,6 @@ footer {
   margin: 32px 0 12px;
 }
 
-.compare-slider {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3296 / 2547;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  margin-bottom: 8px;
-  user-select: none;
-}
-
-.compare-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.compare-slider > .compare-image {
-  width: 100%;
-}
-
-.compare-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  overflow: hidden;
-}
-
-.compare-overlay-img {
-  transform: scale(1.13);
-  transform-origin: 23% 25%;
-}
-
-.compare-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
-  pointer-events: none;
-  transform: translateX(-1px);
-}
-
-.compare-range {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  margin: 0;
-}
-
 .desc a {
   color: var(--white);
   text-decoration: underline;
