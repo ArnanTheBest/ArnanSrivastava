@@ -152,9 +152,10 @@ h3.subgroup {
 
 .progression-row .arrow {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
   font-size: 24px;
-  padding-top: 40px;
+  padding-top: 50px;
   flex: 0 0 auto;
 }
 
@@ -309,6 +310,67 @@ footer {
 .detail-desc {
   font-size: 19px;
   max-width: 70ch;
+}
+
+.detail-subhead {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+}
+
+.compare-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3296 / 2547;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.compare-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.compare-slider > .compare-image {
+  width: 100%;
+}
+
+.compare-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transform: translateX(-1px);
+}
+
+.compare-range {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  width: 90%;
+  margin: 0;
 }
 
 .desc a {

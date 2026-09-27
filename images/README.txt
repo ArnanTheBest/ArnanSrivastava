@@ -15,6 +15,7 @@ beltivator-v3.png
 5667-2025-bot.png
 5667-2026-bot.png
 stub-roller-system.png
+differential-wrist.png
 frcelectrical.png
 2025-frc-field.png
 light-cap.png
@@ -28,3 +29,6 @@ cycloidal-gearbox.png
 differential-arm-concept.png
 prosthetic-arm-cad.png
 3d-printed-clock.png
+cadathon-bot-crystal-caverns-block.png
+cadathon-bot-crystal-caverns-full.png
+2019-bot-block-cad.png
