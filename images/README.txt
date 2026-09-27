@@ -9,15 +9,14 @@ cadathon-bot-crystal-caverns.png
 mk4n-block.png
 block-electronics.png
 configurable-tube-jig.png
-beltivator-v1.png
-beltivator-v2.png
-beltivator-v3.png
 5667-2025-bot.png
 5667-2026-bot.png
 stub-roller-system.png
 differential-wrist.png
 frcelectrical.png
 2025-frc-field.png
+belt-in-tube-elevator.png
+block-cad-gearbox-example.png
 light-cap.png
 jewelry-stand.png
 configurable-circular-threaded-box.png
