@@ -1,3 +1,15 @@
+/*
+  EDIT GUIDE - where things live in this file:
+  - :root block below: the site's color palette. Change these and everything
+    using them updates at once (safest way to recolor the site).
+  - body: the sunset gradient background and the font.
+  - .site-frame: the rounded container every page's content sits inside.
+  - header.hero / nav.section-nav: name, tagline, intro, and the tab links.
+  - .card / .card-grid / .progression-row: how project cards look and are laid out.
+  - .desc / .panel-bg: the translucent text boxes used for descriptions.
+  - .compare-*: only used on the Crystal Caverns before/after slider page.
+  - .detail-*: only used on individual project pages (projects/*.html).
+*/
 :root {
   --black: #1a1a1a;
   --white: #ffffff;

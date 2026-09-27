@@ -1,8 +1,22 @@
 <!DOCTYPE html>
+<!--
+  HOW THIS FILE IS ORGANIZED (index.html = the homepage)
+  - <header class="hero">: your name, tagline, intro line, and the FRC/3D prints/Misc nav
+  - <section class="category" id="...">: one per tab (frc / prints / misc). Only one is
+    visible at a time - the nav's JS at the bottom of this file toggles them.
+  - Inside each section: <h3 class="subgroup"> headers group cards, and each
+    <div class="card-grid"> holds the actual project cards.
+  - Every card is one <a class="card" href="projects/....html">...</a> block.
+    Duplicate an existing one to add a new project; the href points to a
+    matching file in /projects, and the img src points to a matching file
+    in /images.
+  Detailed comments are placed at each of these spots below.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- EDIT: browser tab title -->
 <title>Arnan Srivastava - Maker's portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +27,17 @@
 <div class="site-frame">
 
   <header class="hero">
+    <!-- EDIT: your name -->
     <h1>Arnan Srivastava</h1>
+    <!-- EDIT: short tagline under your name -->
     <p class="tagline">Portfolio</p>
+    <!-- EDIT: intro sentence -->
     <p class="intro">Hi! I'm Arnan. I'm a leader and a designer and I love to create things in my free time- here's a few of the things I've made.</p>
     <div class="divider"></div>
+    <!-- EDIT: to add a whole new tab (e.g. "Videos"), you need three things:
+         1. a new <a href="#yourid" data-section="yourid">Label</a> line here
+         2. a new <section class="category" id="yourid" hidden> ... </section> block below (copy an existing one)
+         3. that's it - the JS at the bottom of this file finds sections automatically -->
     <nav class="section-nav">
       <a href="#frc" class="active" data-section="frc">FRC</a>
       <a href="#prints" data-section="prints">3D prints</a>
@@ -25,10 +46,14 @@
   </header>
 
   <!-- ================= FRC ================= -->
+  <!-- EDIT: this whole block is the "FRC" tab. id="frc" must match the nav link's data-section above. -->
   <section class="category" id="frc">
     <h2>FRC</h2>
+    <!-- EDIT: optional one-line intro under the "FRC" heading -->
     <p class="category-note">Replace: [Add a 1–2 sentence intro to this section if wanted, e.g. team number, years active.]</p>
 
+    <!-- EDIT: "progression-row" cards show a left-to-right sequence with arrows between them.
+         To add a step: copy one <a class="card">...</a> block plus one <div class="arrow">→</div>. -->
     <h3 class="subgroup">Bot progression</h3>
     <div class="progression-row">
       <a class="card" href="projects/first-bot-2016.html"><div class="thumb"><img src="images/first-bot-2016.png" alt="first bot, 2016" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">first bot, 2016</span></div><h4>First bot, 2016</h4></a>
@@ -40,6 +65,9 @@
       <a class="card" href="projects/cadathon-bot-crystal-caverns.html"><div class="thumb"><img src="images/cadathon-bot-crystal-caverns.png" alt="CADathon bot, Crystal Caverns" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">CADathon bot, Crystal Caverns</span></div><h4>CADathon bot - Crystal Caverns</h4></a>
     </div>
 
+    <!-- EDIT: a normal card-grid (no arrows). To add a card, copy one <a class="card">...</a>
+         line and change its href, img src/alt, and <h4> text. To add a whole new subgroup like
+         this one, copy this <h3 class="subgroup"> + <div class="card-grid"> pair. -->
     <h3 class="subgroup">FRCDesignLib entries</h3>
     <div class="card-grid">
       <a class="card" href="projects/mk4n-block.html"><div class="thumb"><img src="images/mk4n-block.png" alt="MK4n block" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">MK4n block</span></div><h4>MK4n block</h4></a>
@@ -63,8 +91,10 @@
       <a class="card" href="projects/block-cad-gearbox-example.html"><div class="thumb"><img src="images/block-cad-gearbox-example.png" alt="block CAD gearbox example" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">block CAD gearbox example</span></div><h4>Example block CAD gearbox</h4></a>
     </div>
   </section>
+  <!-- ================= END FRC ================= -->
 
   <!-- ================= 3D PRINTS ================= -->
+  <!-- EDIT: this whole block is the "3D prints" tab, following the same pattern as FRC above. -->
   <section class="category" id="prints" hidden>
     <h2>3D prints</h2>
     <p class="category-note">Replace: [Add a short intro to this section if wanted.]</p>
@@ -77,8 +107,10 @@
       <a class="card" href="projects/herringbone-fidget-spinner.html"><div class="thumb"><img src="images/herringbone-fidget-spinner.png" alt="herringbone fidget spinner" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">herringbone fidget spinner</span></div><h4>Herringbone fidget spinner</h4></a>
     </div>
   </section>
+  <!-- ================= END 3D PRINTS ================= -->
 
   <!-- ================= MISCELLANEOUS ================= -->
+  <!-- EDIT: this whole block is the "Miscellaneous" tab, same pattern as above. -->
   <section class="category" id="misc" hidden>
     <h2>Miscellaneous</h2>
     <p class="category-note">Replace: [Add a short intro to this section if wanted.]</p>
@@ -99,6 +131,9 @@
 
 </div>
 <script>
+  // Tab-switching logic below - this generally doesn't need editing, even when
+  // you add new cards/sections. It only needs a change if you add a whole new
+  // tab (see the nav comment near the top of this file).
   document.getElementById('year').textContent = new Date().getFullYear();
 
   var navLinks = document.querySelectorAll('.section-nav a');

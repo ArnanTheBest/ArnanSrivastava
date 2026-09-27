@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: page title shown in the browser tab -->
 <title>CADathon bot - Crystal Caverns - Arnan Srivastava</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,9 @@
   <input type="range" class="compare-range-plain" id="cc-range" min="0" max="100" value="50" aria-label="Reveal high-detail CAD" style="width:100%;">
   <p class="desc" style="margin-top:10px; font-size:15px;">Drag left/right - the high-detail CAD fills in from the left as you drag right, with the block CAD remaining on the right until fully revealed.</p>
 
+  <!-- EDIT: project title -->
   <h1>CADathon bot - Crystal Caverns</h1>
+  <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">[Replace: description of the CADathon submission for Crystal Caverns - the constraint, the design response.]</p>
 </div>
 <script>
@@ -41,6 +44,11 @@
     fullImg.onload = onLoad;
     blockImg.src = '../images/cadathon-bot-crystal-caverns-block.png';
     fullImg.src = '../images/cadathon-bot-crystal-caverns-full.png';
+    // EDIT: to swap either image, change the filename above (both PNGs must
+    // stay in /images). If you replace either image with a differently
+    // framed render, the sx/sy/sw/sh numbers below will likely need
+    // re-measuring - they're a manual alignment fit between this specific
+    // pair of images, not something that adapts automatically.
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
@@ -48,6 +56,10 @@
       var pct = Number(range.value);
       var revealPx = W * pct / 100;
 
+      // EDIT: these four numbers crop/stretch the "full" image so its
+      // robot lines up with the "block" image's robot. sx/sy = crop
+      // starting point, sw/sh = crop width/height (in the full image's
+      // original pixel size, ~3296x2547). Smaller sw/sh = more zoomed in.
       var sx = 50;
       var sy = 68;
       var sw = 3123;
