@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=5">
+<link rel="stylesheet" href="../style.css?v=6">
 </head>
 <body>
 <div class="site-frame detail-frame">
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
   <div style="position:relative; margin-bottom:8px;">
-    <canvas id="cc-canvas" width="1200" height="927" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--card-border); background:var(--card-bg);"></canvas>
+    <canvas id="cc-canvas" width="1200" height="927" style="width:100%; height:auto; display:block;"></canvas>
   </div>
   <input type="range" class="compare-range-plain" id="cc-range" min="0" max="100" value="50" aria-label="Reveal high-detail CAD" style="width:100%;">
   <p class="desc" style="margin-top:10px; font-size:15px;">Drag left/right - the high-detail CAD fills in from the left as you drag right, with the block CAD remaining on the right until fully revealed.</p>
@@ -40,27 +40,34 @@
     blockImg.onload = onLoad;
     fullImg.onload = onLoad;
     blockImg.src = '../images/cadathon-bot-crystal-caverns-block.png';
-    fullImg.src = '../images/cadathon-bot-crystal-caverns-full-padded.png';
+    fullImg.src = '../images/cadathon-bot-crystal-caverns-full.png';
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      ctx.drawImage(blockImg, 0, 0, W, H);
 
       var pct = Number(range.value);
       var revealPx = W * pct / 100;
+
+      var sx = 50;
+      var sy = 68;
+      var sw = 3123;
+      var sh = 2476;
 
       if (revealPx > 0) {
         ctx.save();
         ctx.beginPath();
         ctx.rect(0, 0, revealPx, H);
         ctx.clip();
-
-        var sx = 187;
-        var sy = 125;
-        var sw = 3415;
-        var sh = 2390;
-
         ctx.drawImage(fullImg, sx, sy, sw, sh, 0, 0, W, H);
+        ctx.restore();
+      }
+
+      if (revealPx < W) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(revealPx, 0, W - revealPx, H);
+        ctx.clip();
+        ctx.drawImage(blockImg, 0, 0, W, H);
         ctx.restore();
       }
 
