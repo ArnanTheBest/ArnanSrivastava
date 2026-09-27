@@ -22,13 +22,14 @@ jewelry-stand.png
 configurable-circular-threaded-box.png
 robotics-awards.png
 herringbone-fidget-spinner.png
+wire-holder.png
 hoyer-lift.png
-eagle-scout-project.png
+eagle-scout-project-cad.png
 cycloidal-gearbox.png
 differential-arm-concept.png
 prosthetic-arm-cad.png
 3d-printed-clock.png
-eagle-scout-project-cad.png
+eagle-scout-project.png
 cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png
 2019-bot-block-cad.png
