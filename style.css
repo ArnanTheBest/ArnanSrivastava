@@ -330,6 +330,65 @@ footer {
   margin: 32px 0 12px;
 }
 
+/* EDIT: reusable image gallery (one image at a time, left/right arrows).
+   Used on any detail page that needs to show a set of images. See the
+   gallery HTML block in block-electronics.html for the markup pattern -
+   copy that whole block + the script under it to reuse on another page. */
+.gallery {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3296 / 2547;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  margin-bottom: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  min-width: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 28px;
+  font-family: inherit;
+}
+
+.gallery-btn:hover,
+.gallery-btn:focus-visible {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.gallery-btn.prev {
+  left: 0;
+}
+
+.gallery-btn.next {
+  right: 0;
+}
+
+.gallery-counter {
+  text-align: center;
+  font-size: 13px;
+  color: var(--white);
+  margin: 0 0 16px;
+}
+
 .desc a {
   color: var(--white);
   text-decoration: underline;

@@ -17,6 +17,58 @@
   <h1>Block electronics</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">A generic block representation for electronics components, meant to reduce time spent doing full-detail CAD for electronics placement on a robot. It was added to FRCDesignLib a day after it was created. Getting it to work fully took a lot of messing with Onshape configurations. <a href="https://cad.onshape.com/documents/1af0147813f00d76d42d91c4/w/047c0a8a5190a30458b86b16/e/300b557dbb32844abcd9f932">Block electronics CAD, Onshape</a>.</p>
+
+  <!-- EDIT: image gallery. To reuse this on another page, copy this whole block plus the
+       script tag below it, then change: the id="..." values (must be unique per page if a
+       page ever has two galleries), and the images array in the script to your own list
+       of filenames from /images. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery" id="be-gallery">
+    <img id="be-gallery-img" src="../images/block-electronics-gallery-1.png" alt="block electronics gallery image">
+    <button class="gallery-btn prev" id="be-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="be-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="be-gallery-counter">1 / 15</p>
 </div>
+<script>
+  (function () {
+    var images = [
+      'block-electronics-gallery-1.png',
+      'block-electronics-gallery-2.png',
+      'block-electronics-gallery-3.png',
+      'block-electronics-gallery-4.png',
+      'block-electronics-gallery-5.png',
+      'block-electronics-gallery-6.png',
+      'block-electronics-gallery-7.png',
+      'block-electronics-gallery-8.png',
+      'block-electronics-gallery-9.png',
+      'block-electronics-gallery-10.png',
+      'block-electronics-gallery-11.png',
+      'block-electronics-gallery-12.png',
+      'block-electronics-gallery-13.png',
+      'block-electronics-gallery-14.png',
+      'block-electronics-gallery-15.png'
+    ];
+    var index = 0;
+    var img = document.getElementById('be-gallery-img');
+    var counter = document.getElementById('be-gallery-counter');
+    var prevBtn = document.getElementById('be-gallery-prev');
+    var nextBtn = document.getElementById('be-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index];
+      counter.textContent = (index + 1) + ' / ' + images.length;
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+  })();
+</script>
 </body>
 </html>

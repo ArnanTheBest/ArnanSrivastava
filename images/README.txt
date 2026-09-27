@@ -30,6 +30,7 @@ differential-arm-concept.png
 prosthetic-arm-cad.png
 3d-printed-clock.png
 eagle-scout-project.png
+block-electronics-gallery-1.png
 cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png
 2019-bot-block-cad.png
