@@ -40,7 +40,7 @@
     blockImg.onload = onLoad;
     fullImg.onload = onLoad;
     blockImg.src = '../images/cadathon-bot-crystal-caverns-block.png';
-    fullImg.src = '../images/cadathon-bot-crystal-caverns-full.png';
+    fullImg.src = '../images/cadathon-bot-crystal-caverns-full-padded.png';
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
@@ -55,17 +55,12 @@
         ctx.rect(0, 0, revealPx, H);
         ctx.clip();
 
-        var nw = fullImg.naturalWidth || 3296;
-        var nh = fullImg.naturalHeight || 2547;
-        var scale = 1.13;
-        var anchorX = 0.231;
-        var anchorY = 0.251;
-        var cropW = nw / scale;
-        var cropH = nh / scale;
-        var cropX = anchorX * nw - anchorX * cropW;
-        var cropY = anchorY * nh - anchorY * cropH;
+        var sx = 187;
+        var sy = 125;
+        var sw = 3415;
+        var sh = 2390;
 
-        ctx.drawImage(fullImg, cropX, cropY, cropW, cropH, 0, 0, W, H);
+        ctx.drawImage(fullImg, sx, sy, sw, sh, 0, 0, W, H);
         ctx.restore();
       }
 
