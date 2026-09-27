@@ -7,14 +7,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=4">
 </head>
 <body>
 <div class="site-frame detail-frame">
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
   <div class="compare-slider" id="cc-slider">
-    <img class="compare-image compare-base" src="../images/cadathon-bot-crystal-caverns-block.png" alt="block CAD">
-    <img class="compare-image compare-overlay-img" id="cc-overlay-img" src="../images/cadathon-bot-crystal-caverns-full.png" alt="full-detail CAD">
+    <img class="compare-image" src="../images/cadathon-bot-crystal-caverns-block.png" alt="block CAD">
+    <div class="compare-overlay" id="cc-overlay">
+      <img class="compare-image compare-overlay-img" id="cc-overlay-img" src="../images/cadathon-bot-crystal-caverns-full.png" alt="full-detail CAD">
+    </div>
     <div class="compare-line" id="cc-line"></div>
     <input type="range" class="compare-range" id="cc-range" min="0" max="100" value="50" aria-label="Reveal high-detail CAD">
   </div>
@@ -25,17 +27,24 @@
 </div>
 <script>
   (function () {
+    var slider = document.getElementById('cc-slider');
+    var overlay = document.getElementById('cc-overlay');
     var overlayImg = document.getElementById('cc-overlay-img');
     var line = document.getElementById('cc-line');
     var range = document.getElementById('cc-range');
 
     function update() {
-      var pct = Number(range.value);
-      overlayImg.style.clipPath = 'polygon(0 0, ' + pct + '% 0, ' + pct + '% 100%, 0 100%)';
+      var pct = range.value;
+      var rect = slider.getBoundingClientRect();
+      overlay.style.width = pct + '%';
+      overlayImg.style.width = rect.width + 'px';
       line.style.left = pct + '%';
     }
 
     range.addEventListener('input', update);
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    overlayImg.addEventListener('load', update);
     update();
   })();
 </script>
