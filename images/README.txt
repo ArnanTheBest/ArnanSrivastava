@@ -20,6 +20,7 @@ block-cad-gearbox-example.png
 light-cap.png
 jewelry-stand.png
 configurable-circular-threaded-box.png
+pla-silk-gift-case-gallery-1.jpg
 robotics-awards.png
 herringbone-fidget-spinner.png
 wire-holder.png
@@ -30,7 +31,14 @@ differential-arm-concept.png
 prosthetic-arm-cad.png
 3d-printed-clock.png
 eagle-scout-project.png
+light-cap-gallery-1.jpg
 block-electronics-gallery-1.png
+robotics-awards-gallery-1.jpg
+2025-frc-field-gallery-1.jpg
+cadathon-bot-crystal-caverns-gallery-1.jpg
 cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png
+stub-roller-system-gallery-1.jpg
+jewelry-stand-gallery-1.jpg
+hoyer-lift-gallery-1.jpg
 2019-bot-block-cad.png

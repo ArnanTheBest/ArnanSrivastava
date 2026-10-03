@@ -30,6 +30,65 @@
   <div style="position:relative; width:100%; max-width:780px; margin:0 auto; aspect-ratio:16/9; border-radius:12px; overflow:hidden; border:1px solid var(--card-border); background:var(--card-bg);">
     <iframe src="https://docs.google.com/presentation/d/1QtqF_JvsNMZ7WkHMbY9QMXMdYktpa89k/embed?start=false&loop=false&delayms=3000" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
   </div>
+
+  <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
+       plus the script tag below it, then change: the id="..." values (must be unique per
+       page if a page ever has two galleries), and the images array in the script to your
+       own list of filenames from /images. Each image can have a caption - leave caption
+       as '' for no caption (default), or put text in quotes to show one under the image. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery" id="hoyer_lift-gallery">
+    <img id="hoyer_lift-gallery-img" src="../images/hoyer-lift-gallery-1.jpg" alt="hoyer-lift gallery image">
+    <button class="gallery-btn prev" id="hoyer_lift-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="hoyer_lift-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="hoyer_lift-gallery-counter">1 / 9</p>
+  <p class="gallery-caption" id="hoyer_lift-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: 'hoyer-lift-gallery-1.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-2.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-3.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-4.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-5.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-6.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-8.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-9.jpg', caption: '' },
+      { src: 'hoyer-lift-gallery-10.jpg', caption: '' }
+    ];
+    var index = 0;
+    var img = document.getElementById('hoyer_lift-gallery-img');
+    var counter = document.getElementById('hoyer_lift-gallery-counter');
+    var caption = document.getElementById('hoyer_lift-gallery-caption');
+    var prevBtn = document.getElementById('hoyer_lift-gallery-prev');
+    var nextBtn = document.getElementById('hoyer_lift-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>

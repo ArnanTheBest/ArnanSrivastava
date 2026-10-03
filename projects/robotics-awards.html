@@ -22,6 +22,60 @@
   <h1>Robotics awards</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">Designed and printed to present to kids on the team. [Replace: further detail on the design and the occasion.]</p>
+
+  <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
+       plus the script tag below it, then change: the id="..." values (must be unique per
+       page if a page ever has two galleries), and the images array in the script to your
+       own list of filenames from /images. Each image can have a caption - leave caption
+       as '' for no caption (default), or put text in quotes to show one under the image. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery" id="robotics_awards-gallery">
+    <img id="robotics_awards-gallery-img" src="../images/robotics-awards-gallery-1.jpg" alt="robotics-awards gallery image">
+    <button class="gallery-btn prev" id="robotics_awards-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="robotics_awards-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="robotics_awards-gallery-counter">1 / 4</p>
+  <p class="gallery-caption" id="robotics_awards-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: 'robotics-awards-gallery-1.jpg', caption: '' },
+      { src: 'robotics-awards-gallery-2.jpg', caption: '' },
+      { src: 'robotics-awards-gallery-3.jpg', caption: '' },
+      { src: 'robotics-awards-gallery-4.jpg', caption: '' }
+    ];
+    var index = 0;
+    var img = document.getElementById('robotics_awards-gallery-img');
+    var counter = document.getElementById('robotics_awards-gallery-counter');
+    var caption = document.getElementById('robotics_awards-gallery-caption');
+    var prevBtn = document.getElementById('robotics_awards-gallery-prev');
+    var nextBtn = document.getElementById('robotics_awards-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>

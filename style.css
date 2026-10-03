@@ -392,8 +392,20 @@ footer {
   text-align: center;
   font-size: 13px;
   color: var(--white);
+  margin: 0 auto 4px;
+  max-width: 780px;
+}
+
+/* EDIT: per-image caption, shown under the counter. Empty by default -
+   if an image's caption is '', this is hidden entirely so no blank box
+   appears. Set text in the images array in the gallery's script to show one. */
+.gallery-caption {
+  text-align: center;
+  font-size: 14px;
+  color: var(--white);
   margin: 0 auto 16px;
   max-width: 780px;
+  display: none;
 }
 
 .desc a {

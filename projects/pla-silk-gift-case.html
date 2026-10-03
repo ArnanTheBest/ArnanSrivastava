@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- EDIT: page title shown in the browser tab -->
-<title>Stub roller system - Arnan Srivastava</title>
+<title>PLA Silk Gift Case - Arnan Srivastava</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -13,15 +13,10 @@
 <body>
 <div class="site-frame detail-frame">
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
-  <!-- EDIT: image shown for this project. Change the src filename to swap the picture (put the matching file in /images). alt text is the fallback label shown if the image is missing. -->
-  <div class="detail-thumb">
-    <img src="../images/stub-roller-system.png" alt="stub roller system" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <span class="thumb-fallback">stub roller system</span>
-  </div>
   <!-- EDIT: project title -->
-  <h1>Stub roller system</h1>
+  <h1>PLA Silk Gift Case</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
-  <p class="desc detail-desc">[Replace: what the stub roller system does, where it's used.]</p>
+  <p class="desc detail-desc">[Replace: what this gift case design is, the silk PLA filament look, and the different occasions/configurations it's been made for.]</p>
 
   <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
        plus the script tag below it, then change: the id="..." values (must be unique per
@@ -29,26 +24,29 @@
        own list of filenames from /images. Each image can have a caption - leave caption
        as '' for no caption (default), or put text in quotes to show one under the image. -->
   <h2 class="detail-subhead">Gallery</h2>
-  <div class="gallery" id="stub_roller_system-gallery">
-    <img id="stub_roller_system-gallery-img" src="../images/stub-roller-system-gallery-1.jpg" alt="stub-roller-system gallery image">
-    <button class="gallery-btn prev" id="stub_roller_system-gallery-prev" aria-label="Previous image">&larr;</button>
-    <button class="gallery-btn next" id="stub_roller_system-gallery-next" aria-label="Next image">&rarr;</button>
+  <div class="gallery" id="pla_silk_gift_case-gallery">
+    <img id="pla_silk_gift_case-gallery-img" src="../images/pla-silk-gift-case-gallery-1.jpg" alt="pla-silk-gift-case gallery image">
+    <button class="gallery-btn prev" id="pla_silk_gift_case-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="pla_silk_gift_case-gallery-next" aria-label="Next image">&rarr;</button>
   </div>
-  <p class="gallery-counter" id="stub_roller_system-gallery-counter">1 / 1</p>
-  <p class="gallery-caption" id="stub_roller_system-gallery-caption"></p>
+  <p class="gallery-counter" id="pla_silk_gift_case-gallery-counter">1 / 4</p>
+  <p class="gallery-caption" id="pla_silk_gift_case-gallery-caption"></p>
 </div>
 
 <script>
   (function () {
     var images = [
-      { src: 'stub-roller-system-gallery-1.jpg', caption: '' }
+      { src: 'pla-silk-gift-case-gallery-1.jpg', caption: '' },
+      { src: 'pla-silk-gift-case-gallery-2.jpg', caption: '' },
+      { src: 'pla-silk-gift-case-gallery-3.jpg', caption: '' },
+      { src: 'pla-silk-gift-case-gallery-4.jpg', caption: '' }
     ];
     var index = 0;
-    var img = document.getElementById('stub_roller_system-gallery-img');
-    var counter = document.getElementById('stub_roller_system-gallery-counter');
-    var caption = document.getElementById('stub_roller_system-gallery-caption');
-    var prevBtn = document.getElementById('stub_roller_system-gallery-prev');
-    var nextBtn = document.getElementById('stub_roller_system-gallery-next');
+    var img = document.getElementById('pla_silk_gift_case-gallery-img');
+    var counter = document.getElementById('pla_silk_gift_case-gallery-counter');
+    var caption = document.getElementById('pla_silk_gift_case-gallery-caption');
+    var prevBtn = document.getElementById('pla_silk_gift_case-gallery-prev');
+    var nextBtn = document.getElementById('pla_silk_gift_case-gallery-next');
 
     function update() {
       img.src = '../images/' + images[index].src;

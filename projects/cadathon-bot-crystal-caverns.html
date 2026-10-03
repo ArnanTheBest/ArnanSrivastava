@@ -23,6 +23,20 @@
   <h1>CADathon bot - Crystal Caverns</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">[Replace: description of the CADathon submission for Crystal Caverns - the constraint, the design response.]</p>
+
+  <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
+       plus the script tag below it, then change: the id="..." values (must be unique per
+       page if a page ever has two galleries), and the images array in the script to your
+       own list of filenames from /images. Each image can have a caption - leave caption
+       as '' for no caption (default), or put text in quotes to show one under the image. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery" id="cc_gallery-gallery">
+    <img id="cc_gallery-gallery-img" src="../images/cadathon-bot-crystal-caverns-gallery-1.jpg" alt="cadathon-bot-crystal-caverns gallery image">
+    <button class="gallery-btn prev" id="cc_gallery-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="cc_gallery-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="cc_gallery-gallery-counter">1 / 1</p>
+  <p class="gallery-caption" id="cc_gallery-gallery-caption"></p>
 </div>
 <script>
   (function () {
@@ -90,6 +104,42 @@
     }
 
     range.addEventListener('input', draw);
+  })();
+</script>
+<script>
+  (function () {
+    var images = [
+      { src: 'cadathon-bot-crystal-caverns-gallery-1.jpg', caption: '' }
+    ];
+    var index = 0;
+    var img = document.getElementById('cc_gallery-gallery-img');
+    var counter = document.getElementById('cc_gallery-gallery-counter');
+    var caption = document.getElementById('cc_gallery-gallery-caption');
+    var prevBtn = document.getElementById('cc_gallery-gallery-prev');
+    var nextBtn = document.getElementById('cc_gallery-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
   })();
 </script>
 </body>

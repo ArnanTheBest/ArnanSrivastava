@@ -22,6 +22,58 @@
   <h1>Fabrication lead - 2025 FRC field</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">[Replace: one or two paragraphs on scope - what was fabricated, team size you led, your specific responsibilities, timeline, and any constraints worth mentioning.]</p>
+
+  <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
+       plus the script tag below it, then change: the id="..." values (must be unique per
+       page if a page ever has two galleries), and the images array in the script to your
+       own list of filenames from /images. Each image can have a caption - leave caption
+       as '' for no caption (default), or put text in quotes to show one under the image. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery" id="2025_frc_field-gallery">
+    <img id="2025_frc_field-gallery-img" src="../images/2025-frc-field-gallery-1.jpg" alt="2025-frc-field gallery image">
+    <button class="gallery-btn prev" id="2025_frc_field-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="2025_frc_field-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="2025_frc_field-gallery-counter">1 / 2</p>
+  <p class="gallery-caption" id="2025_frc_field-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: '2025-frc-field-gallery-1.jpg', caption: '' },
+      { src: '2025-frc-field-gallery-2.jpg', caption: '' }
+    ];
+    var index = 0;
+    var img = document.getElementById('2025_frc_field-gallery-img');
+    var counter = document.getElementById('2025_frc_field-gallery-counter');
+    var caption = document.getElementById('2025_frc_field-gallery-caption');
+    var prevBtn = document.getElementById('2025_frc_field-gallery-prev');
+    var nextBtn = document.getElementById('2025_frc_field-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>
