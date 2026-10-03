@@ -20,7 +20,7 @@ block-cad-gearbox-example.png
 light-cap.png
 jewelry-stand.png
 configurable-circular-threaded-box.png
-pla-silk-gift-case-gallery-1.jpg
+pla-silk-gift-case.png
 robotics-awards.png
 herringbone-fidget-spinner.png
 wire-holder.png
@@ -35,6 +35,7 @@ light-cap-gallery-1.jpg
 block-electronics-gallery-1.png
 robotics-awards-gallery-1.jpg
 2025-frc-field-gallery-1.jpg
+pla-silk-gift-case-gallery-1.jpg
 cadathon-bot-crystal-caverns-gallery-1.jpg
 cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png

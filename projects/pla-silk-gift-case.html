@@ -13,6 +13,11 @@
 <body>
 <div class="site-frame detail-frame">
   <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
+  <!-- EDIT: header image for this project. Change the src filename to swap the picture (put the matching file in /images). -->
+  <div class="detail-thumb">
+    <img src="../images/pla-silk-gift-case.png" alt="PLA Silk Gift Case" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <span class="thumb-fallback">PLA Silk Gift Case</span>
+  </div>
   <!-- EDIT: project title -->
   <h1>PLA Silk Gift Case</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
@@ -29,7 +34,7 @@
     <button class="gallery-btn prev" id="pla_silk_gift_case-gallery-prev" aria-label="Previous image">&larr;</button>
     <button class="gallery-btn next" id="pla_silk_gift_case-gallery-next" aria-label="Next image">&rarr;</button>
   </div>
-  <p class="gallery-counter" id="pla_silk_gift_case-gallery-counter">1 / 4</p>
+  <p class="gallery-counter" id="pla_silk_gift_case-gallery-counter">1 / 3</p>
   <p class="gallery-caption" id="pla_silk_gift_case-gallery-caption"></p>
 </div>
 
@@ -38,8 +43,7 @@
     var images = [
       { src: 'pla-silk-gift-case-gallery-1.jpg', caption: '' },
       { src: 'pla-silk-gift-case-gallery-2.jpg', caption: '' },
-      { src: 'pla-silk-gift-case-gallery-3.jpg', caption: '' },
-      { src: 'pla-silk-gift-case-gallery-4.jpg', caption: '' }
+      { src: 'pla-silk-gift-case-gallery-3.jpg', caption: '' }
     ];
     var index = 0;
     var img = document.getElementById('pla_silk_gift_case-gallery-img');
