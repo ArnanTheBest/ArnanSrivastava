@@ -1,131 +1,58 @@
 <!DOCTYPE html>
 <!--
   HOW THIS FILE IS ORGANIZED (index.html = the homepage)
-  - <header class="hero">: your name, tagline, intro line, and the FRC/3D prints/Misc nav
-  - <section class="category" id="...">: one per tab (frc / prints / misc). Only one is
-    visible at a time - the nav's JS at the bottom of this file toggles them.
-  - Inside each section: <h3 class="subgroup"> headers group cards, and each
-    <div class="card-grid"> holds the actual project cards.
-  - Every card is one <a class="card" href="projects/....html">...</a> block.
-    Duplicate an existing one to add a new project; the href points to a
-    matching file in /projects, and the img src points to a matching file
-    in /images.
-  Detailed comments are placed at each of these spots below.
+  - This is now just the hero: your name, intro, contact line, and three
+    links to the category hub pages (frc.html / 3d-prints.html / misc.html).
+  - The actual project cards live on those three hub pages, not here.
+  - img.home-bg is the night-sky background photo - ONLY this page has it.
+  - EDIT: your name, intro paragraph, or contact email - just edit the text
+    inside <div class="home-hero"> below.
+  - EDIT: to add a whole new category (e.g. "Videos"), add a new
+    <a class="home-link"> block in <div class="home-links">, then build a
+    new hub page (copy frc.html as a starting point).
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- EDIT: browser tab title -->
 <title>Arnan Srivastava - Maker's portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=6">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
+
+<img class="home-bg" src="images/bg-night-sky.jpg" alt="">
+
 <div class="site-frame">
 
-  <header class="hero">
+  <div class="home-hero">
     <!-- EDIT: your name -->
     <h1>Arnan Srivastava</h1>
-    <!-- EDIT: short tagline under your name -->
-    <p class="tagline">Portfolio</p>
     <!-- EDIT: intro sentence -->
-    <p class="intro">Hi! I'm Arnan. I'm a maker and leader and I love to create things in my free time- here's a few of the things I've made.</p>
-    <div class="divider"></div>
-    <!-- EDIT: to add a whole new tab (e.g. "Videos"), you need three things:
-         1. a new <a href="#yourid" data-section="yourid">Label</a> line here
-         2. a new <section class="category" id="yourid" hidden> ... </section> block below (copy an existing one)
-         3. that's it - the JS at the bottom of this file finds sections automatically -->
-    <nav class="section-nav">
-      <a href="#frc" class="active" data-section="frc">FRC</a>
-      <a href="#prints" data-section="prints">3D prints</a>
-      <a href="#misc" data-section="misc">Miscellaneous</a>
-    </nav>
-  </header>
+    <p class="intro">Hi! I am Arnan. I am a maker and leader and I love to create things in my free time - here is a few of the things I have made.</p>
+    <!-- EDIT: contact line -->
+    <p class="contact">Want to connect? Let's talk. <a href="mailto:arnanjaisrivastava@gmail.com">arnanjaisrivastava [at] gmail [dot] com</a>.</p>
 
-  <!-- ================= FRC ================= -->
-  <!-- EDIT: this whole block is the "FRC" tab. id="frc" must match the nav link's data-section above. -->
-  <section class="category" id="frc">
-    <h2>FRC</h2>
-    <!-- EDIT: optional one-line intro under the "FRC" heading -->
-    <p class="category-note">Replace: [Add a 1–2 sentence intro to this section if wanted, e.g. team number, years active.]</p>
-
-    <!-- EDIT: "progression-row" cards show a left-to-right sequence with arrows between them.
-         To add a step: copy one <a class="card">...</a> block plus one <div class="arrow">→</div>. -->
-    <h3 class="subgroup">Bot progression</h3>
-    <div class="progression-row">
-      <a class="card" href="projects/first-bot-2016.html"><div class="thumb"><img src="images/first-bot-2016.png" alt="first bot, 2016" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">first bot, 2016</span></div><h4>First bot, 2016</h4></a>
-      <div class="arrow">→</div>
-      <a class="card" href="projects/2017-bot.html"><div class="thumb"><img src="images/2017-bot.png" alt="2017 bot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">2017 bot</span></div><h4>2017 bot</h4></a>
-      <div class="arrow">→</div>
-      <a class="card" href="projects/2019-bot.html"><div class="thumb"><img src="images/2019-bot.png" alt="2019 bot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">2019 bot</span></div><h4>2019 bot</h4></a>
-      <div class="arrow">→</div>
-      <a class="card" href="projects/cadathon-bot-crystal-caverns.html"><div class="thumb"><img src="images/cadathon-bot-crystal-caverns.png" alt="CADathon bot, Crystal Caverns" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">CADathon bot, Crystal Caverns</span></div><h4>CADathon bot - Crystal Caverns</h4></a>
+    <!-- EDIT: the three category links below. Each one needs an <h2> label
+         and a one-line description underneath, and the href must point to
+         that category's hub page. -->
+    <div class="home-links">
+      <a class="home-link" href="frc.html">
+        <h2>FRC</h2>
+        <p>Things made for the FIRST Robotics Competition community or my team</p>
+      </a>
+      <a class="home-link" href="3d-prints.html">
+        <h2>3D prints</h2>
+        <p>Small prints and gifts for myself, family, and friends</p>
+      </a>
+      <a class="home-link" href="misc.html">
+        <h2>Miscellaneous</h2>
+        <p>Side projects unrelated to everything else</p>
+      </a>
     </div>
-
-    <!-- EDIT: a normal card-grid (no arrows). To add a card, copy one <a class="card">...</a>
-         line and change its href, img src/alt, and <h4> text. To add a whole new subgroup like
-         this one, copy this <h3 class="subgroup"> + <div class="card-grid"> pair. -->
-    <h3 class="subgroup">FRCDesignLib entries</h3>
-    <div class="card-grid">
-      <a class="card" href="projects/mk4n-block.html"><div class="thumb"><img src="images/mk4n-block.png" alt="MK4n block" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">MK4n block</span></div><h4>MK4n block</h4></a>
-      <a class="card" href="projects/block-electronics.html"><div class="thumb"><img src="images/block-electronics.png" alt="block electronics" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">block electronics</span></div><h4>Block electronics</h4></a>
-      <a class="card" href="projects/configurable-tube-jig.html"><div class="thumb"><img src="images/configurable-tube-jig.png" alt="configurable tube jig" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">configurable tube jig</span></div><h4>Configurable tube jig</h4></a>
-    </div>
-
-    <h3 class="subgroup">5667 bots</h3>
-    <div class="card-grid">
-      <a class="card" href="projects/5667-2025-bot.html"><div class="thumb"><img src="images/5667-2025-bot.png" alt="5667, 2025 bot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">5667, 2025 bot</span></div><h4>5667 - 2025 bot</h4></a>
-      <a class="card" href="projects/5667-2026-bot.html"><div class="thumb"><img src="images/5667-2026-bot.png" alt="5667, 2026 bot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">5667, 2026 bot</span></div><h4>5667 - 2026 bot</h4></a>
-    </div>
-
-    <h3 class="subgroup">Other</h3>
-    <div class="card-grid">
-      <a class="card" href="projects/stub-roller-system.html"><div class="thumb"><img src="images/stub-roller-system.png" alt="stub roller system" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">stub roller system</span></div><h4>Stub roller system</h4></a>
-      <a class="card" href="projects/differential-wrist.html"><div class="thumb"><img src="images/differential-wrist.png" alt="differential wrist" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">differential wrist</span></div><h4>Differential wrist</h4></a>
-      <a class="card" href="projects/frcelectrical.html"><div class="thumb"><img src="images/frcelectrical.png" alt="FRCElectrical" loading="lazy" style="object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">FRCElectrical</span></div><h4>FRCElectrical - founder</h4></a>
-      <a class="card" href="projects/2025-frc-field.html"><div class="thumb"><img src="images/2025-frc-field.png" alt="2025 FRC field" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">2025 FRC field</span></div><h4>Fabrication lead - 2025 FRC field</h4></a>
-      <a class="card" href="projects/belt-in-tube-elevator.html"><div class="thumb"><img src="images/belt-in-tube-elevator.png" alt="belt-in-tube elevator" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">belt-in-tube elevator</span></div><h4>Belt-in-tube elevator</h4></a>
-      <a class="card" href="projects/block-cad-gearbox-example.html"><div class="thumb"><img src="images/block-cad-gearbox-example.png" alt="block CAD gearbox example" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">block CAD gearbox example</span></div><h4>Example block CAD gearbox</h4></a>
-    </div>
-  </section>
-  <!-- ================= END FRC ================= -->
-
-  <!-- ================= 3D PRINTS ================= -->
-  <!-- EDIT: this whole block is the "3D prints" tab, following the same pattern as FRC above. -->
-  <section class="category" id="prints" hidden>
-    <h2>3D prints</h2>
-    <p class="category-note">Replace: [Add a short intro to this section if wanted.]</p>
-
-    <div class="card-grid">
-      <a class="card" href="projects/light-cap.html"><div class="thumb"><img src="images/light-cap.png" alt="light cap" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">light cap</span></div><h4>Light cap</h4></a>
-      <a class="card" href="projects/jewelry-stand.html"><div class="thumb"><img src="images/jewelry-stand.png" alt="jewelry stand" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">jewelry stand</span></div><h4>Jewelry stand</h4></a>
-      <a class="card" href="projects/configurable-circular-threaded-box.html"><div class="thumb"><img src="images/configurable-circular-threaded-box.png" alt="configurable circular threaded box" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">configurable circular threaded box</span></div><h4>Configurable circular threaded box</h4></a>
-      <a class="card" href="projects/pla-silk-gift-case.html"><div class="thumb"><img src="images/pla-silk-gift-case.png" alt="PLA Silk Gift Case" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">PLA Silk Gift Case</span></div><h4>PLA Silk Gift Case</h4></a>
-      <a class="card" href="projects/robotics-awards.html"><div class="thumb"><img src="images/robotics-awards.png" alt="robotics awards" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">robotics awards</span></div><h4>Robotics awards</h4></a>
-      <a class="card" href="projects/herringbone-fidget-spinner.html"><div class="thumb"><img src="images/herringbone-fidget-spinner.png" alt="herringbone fidget spinner" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">herringbone fidget spinner</span></div><h4>Herringbone fidget spinner</h4></a>
-      <a class="card" href="projects/wire-holder.html"><div class="thumb"><img src="images/wire-holder.png" alt="wire holder" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">wire holder</span></div><h4>Wire holder</h4></a>
-    </div>
-  </section>
-  <!-- ================= END 3D PRINTS ================= -->
-
-  <!-- ================= MISCELLANEOUS ================= -->
-  <!-- EDIT: this whole block is the "Miscellaneous" tab, same pattern as above. -->
-  <section class="category" id="misc" hidden>
-    <h2>Miscellaneous</h2>
-    <p class="category-note">Replace: [Add a short intro to this section if wanted.]</p>
-
-    <div class="card-grid">
-      <a class="card" href="projects/hoyer-lift.html"><div class="thumb"><img src="images/hoyer-lift.png" alt="Hoyer lift" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">Hoyer lift</span></div><h4>Hoyer lift</h4></a>
-      <a class="card" href="projects/eagle-scout-project.html"><div class="thumb"><img src="images/eagle-scout-project-cad.png" alt="Eagle Scout project" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">Eagle Scout project</span></div><h4>Eagle Scout project</h4></a>
-      <a class="card" href="projects/cycloidal-gearbox.html"><div class="thumb"><img src="images/cycloidal-gearbox.png" alt="cycloidal gearbox" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">cycloidal gearbox</span></div><h4>Cycloidal gearbox</h4></a>
-      <a class="card" href="projects/differential-arm-concept.html"><div class="thumb"><img src="images/differential-arm-concept.png" alt="differential arm concept" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">differential arm concept</span></div><h4>Differential arm concept</h4></a>
-      <a class="card" href="projects/prosthetic-arm-cad.html"><div class="thumb"><img src="images/prosthetic-arm-cad.png" alt="prosthetic arm CAD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">prosthetic arm CAD</span></div><h4>Prosthetic arm - CAD</h4></a>
-      <a class="card" href="projects/3d-printed-clock.html"><div class="thumb"><img src="images/3d-printed-clock.png" alt="3D-printed clock" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="thumb-fallback">3D-printed clock</span></div><h4>3D-printed clock</h4></a>
-    </div>
-  </section>
+  </div>
 
   <footer>
     © <span id="year"></span> Arnan Srivastava
@@ -133,29 +60,7 @@
 
 </div>
 <script>
-  // Tab-switching logic below - this generally doesn't need editing, even when
-  // you add new cards/sections. It only needs a change if you add a whole new
-  // tab (see the nav comment near the top of this file).
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  var navLinks = document.querySelectorAll('.section-nav a');
-  var sections = document.querySelectorAll('section.category');
-
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var target = link.getAttribute('data-section');
-
-      navLinks.forEach(function (l) {
-        l.classList.toggle('active', l === link);
-      });
-      sections.forEach(function (s) {
-        s.hidden = s.id !== target;
-      });
-
-      history.replaceState(null, '', '#' + target);
-    });
-  });
 </script>
 </body>
 </html>
