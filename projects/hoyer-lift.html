@@ -11,13 +11,10 @@
 <link rel="stylesheet" href="../style.css?v=7">
 </head>
 <body>
+<img class="detail-bg" src="../images/bg-eclipse.jpg" alt="">
 <div class="site-frame detail-frame">
   <a class="back-link" href="../misc.html">&larr; Back to Miscellaneous</a>
   <!-- EDIT: image shown for this project. Change the src filename to swap the picture (put the matching file in /images). alt text is the fallback label shown if the image is missing. -->
-  <div class="detail-thumb">
-    <img src="../images/hoyer-lift.png" alt="Hoyer lift" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <span class="thumb-fallback">Hoyer lift</span>
-  </div>
   <!-- EDIT: project title -->
   <h1>Hoyer lift</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
@@ -44,11 +41,13 @@
   </div>
   <p class="gallery-counter" id="hoyer_lift-gallery-counter">1 / 9</p>
   <p class="gallery-caption" id="hoyer_lift-gallery-caption"></p>
+  <p class="detail-credit">Credit &amp; Copyright: Reinhold Wittich</p>
 </div>
 
 <script>
   (function () {
     var images = [
+      { src: 'hoyer-lift.png', caption: '' },
       { src: 'hoyer-lift-gallery-1.jpg', caption: '' },
       { src: 'hoyer-lift-gallery-2.jpg', caption: '' },
       { src: 'hoyer-lift-gallery-3.jpg', caption: '' },

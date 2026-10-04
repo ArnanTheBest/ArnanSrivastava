@@ -11,13 +11,10 @@
 <link rel="stylesheet" href="../style.css?v=7">
 </head>
 <body>
+<img class="detail-bg" src="../images/bg-eclipse.jpg" alt="">
 <div class="site-frame detail-frame">
   <a class="back-link" href="../frc.html">&larr; Back to FRC</a>
   <!-- EDIT: image shown for this project. Change the src filename to swap the picture (put the matching file in /images). alt text is the fallback label shown if the image is missing. -->
-  <div class="detail-thumb">
-    <img src="../images/first-bot-2016.png" alt="first bot, 2016" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <span class="thumb-fallback">first bot, 2016</span>
-  </div>
   <!-- EDIT: project title -->
   <h1>First bot, 2016</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
@@ -34,11 +31,13 @@
   </div>
   <p class="gallery-counter" id="first_bot_2016-gallery-counter">1 / 4</p>
   <p class="gallery-caption" id="first_bot_2016-gallery-caption"></p>
+  <p class="detail-credit">Credit &amp; Copyright: Reinhold Wittich</p>
 </div>
 
 <script>
   (function () {
     var images = [
+      { src: 'first-bot-2016.png', caption: '' },
       { src: 'first-bot-2016-drivebase.png', caption: 'Drivebase' },
       { src: 'first-bot-2016-intake.png', caption: 'Intake' },
       { src: 'first-bot-2016-shooter.png', caption: 'Shooter' },

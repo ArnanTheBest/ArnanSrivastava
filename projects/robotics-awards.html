@@ -11,13 +11,10 @@
 <link rel="stylesheet" href="../style.css?v=7">
 </head>
 <body>
+<img class="detail-bg" src="../images/bg-eclipse.jpg" alt="">
 <div class="site-frame detail-frame">
   <a class="back-link" href="../3d-prints.html">&larr; Back to 3D prints</a>
   <!-- EDIT: image shown for this project. Change the src filename to swap the picture (put the matching file in /images). alt text is the fallback label shown if the image is missing. -->
-  <div class="detail-thumb">
-    <img src="../images/robotics-awards.png" alt="robotics awards" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-    <span class="thumb-fallback">robotics awards</span>
-  </div>
   <!-- EDIT: project title -->
   <h1>Robotics awards</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
@@ -36,11 +33,13 @@
   </div>
   <p class="gallery-counter" id="robotics_awards-gallery-counter">1 / 4</p>
   <p class="gallery-caption" id="robotics_awards-gallery-caption"></p>
+  <p class="detail-credit">Credit &amp; Copyright: Reinhold Wittich</p>
 </div>
 
 <script>
   (function () {
     var images = [
+      { src: 'robotics-awards.png', caption: '' },
       { src: 'robotics-awards-gallery-1.jpg', caption: '' },
       { src: 'robotics-awards-gallery-2.jpg', caption: '' },
       { src: 'robotics-awards-gallery-3.jpg', caption: '' },
