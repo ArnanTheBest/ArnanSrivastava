@@ -42,8 +42,10 @@ cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png
 stub-roller-system-gallery-1.jpg
 2017-bot-hopper-shooter.png
+configurable-circular-threaded-box-gallery-1.jpg
 jewelry-stand-gallery-1.jpg
 first-bot-2016-drivebase.png
 hoyer-lift-gallery-1.jpg
+wire-holder-rigid.png
 2019-bot-block-cad.png
 2019-bot-elevator.png

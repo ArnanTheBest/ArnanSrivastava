@@ -22,6 +22,57 @@
   <h1>Configurable circular threaded box</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
   <p class="desc detail-desc">A small threaded container, parameterized in Onshape so the diameter, height, and thread pitch can all be adjusted from a configuration table rather than remodeled by hand. Printed as a quick, reusable case for small parts - change a few numbers and reprint for a different size.</p>
+
+  <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
+       plus the script tag below it, then change: the id="..." values (must be unique per
+       page if a page ever has two galleries), and the images array in the script to your
+       own list of filenames from /images. Each image can have a caption - leave caption
+       as '' for no caption (default), or put text in quotes to show one under the image. -->
+  <h2 class="detail-subhead">Gallery</h2>
+  <div class="gallery photo-gallery" id="cctb-gallery">
+    <img id="cctb-gallery-img" src="../images/configurable-circular-threaded-box-gallery-1.jpg" alt="configurable circular threaded box gallery image">
+    <button class="gallery-btn prev" id="cctb-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="cctb-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="cctb-gallery-counter">1 / 1</p>
+  <p class="gallery-caption" id="cctb-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: 'configurable-circular-threaded-box-gallery-1.jpg', caption: '' }
+    ];
+    var index = 0;
+    var img = document.getElementById('cctb-gallery-img');
+    var counter = document.getElementById('cctb-gallery-counter');
+    var caption = document.getElementById('cctb-gallery-caption');
+    var prevBtn = document.getElementById('cctb-gallery-prev');
+    var nextBtn = document.getElementById('cctb-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>

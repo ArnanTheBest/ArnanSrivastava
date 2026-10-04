@@ -356,6 +356,20 @@ footer {
   display: block;
 }
 
+/* EDIT: add class="gallery photo-gallery" (instead of just class="gallery") when the
+   images are real photos rather than CAD renders - this fills the box completely
+   (no letterboxing) and drops the translucent card background, since that background
+   looks like an ugly visible box behind photos that don't match the gallery's aspect
+   ratio. Leave plain class="gallery" for CAD/render galleries. */
+.gallery.photo-gallery {
+  background: none;
+  border: none;
+}
+
+.gallery.photo-gallery img {
+  object-fit: cover;
+}
+
 .gallery-btn {
   position: absolute;
   top: 50%;
