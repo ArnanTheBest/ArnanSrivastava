@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <!--
   HOW THIS FILE IS ORGANIZED (index.html = the homepage)
-  - This is now just the hero: your name, intro, contact line, and three
-    links to the category hub pages (frc.html / 3d-prints.html / misc.html).
-  - The actual project cards live on those three hub pages, not here.
+  - This is the hero: your name, intro, contact line, resume link, a
+    hand-picked row of "featured" project links, then the three links to
+    the category hub pages (frc.html / 3d-prints.html / misc.html).
+  - Featured projects are pulled out of their category hub page grid by
+    adding `featured: true` to their .md frontmatter (see build.py) - the
+    project itself still lives in content/ and still has a normal detail
+    page, it just doesn't show up a second time on its hub page.
+  - All other project cards live on the three hub pages, not here.
   - img.home-bg is the night-sky background photo - ONLY this page has it.
   - EDIT: your name, intro paragraph, or contact email - just edit the text
     inside <div class="home-hero"> below.
@@ -33,11 +38,35 @@
     <!-- EDIT: intro sentence -->
     <p class="intro">Hi! I am Arnan. I am a maker and leader and I love to create things in my free time - here is a few of the things I have made.</p>
     <!-- EDIT: contact line -->
-    <p class="contact">Want to connect? Let's talk. <a href="mailto:arnanjaisrivastava@gmail.com">arnanjaisrivastava [at] gmail [dot] com</a>.</p>
+    <p class="contact">Want to connect? Let's talk. <a href="mailto:arnanjaisrivastava@gmail.com">arnanjaisrivastava@gmail.com</a>.</p>
+    <!-- EDIT: resume link. Swap the file in /files to update it - keep the filename the
+         same (or update the href below to match) and this link stays correct. -->
+    <p class="contact"><a href="files/arnan-srivastava-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
+
+    <!-- EDIT: featured project links - hand-picked projects pulled out of their normal
+         category hub page (via `featured: true` in their .md frontmatter - see
+         build.py) and surfaced here instead, in whatever order you list them. Each one
+         needs an <h2> label, a one-line description, and an href pointing at
+         projects/<slug>.html. -->
+    <div class="home-links">
+      <a class="home-link" href="projects/cycloidal-gearbox.html">
+        <h2>Cycloidal gearbox</h2>
+        <p>Sectioned to show the reduction stage inside</p>
+      </a>
+      <a class="home-link" href="projects/3d-printed-clock.html">
+        <h2>3D-printed clock</h2>
+        <p>A skeleton gear-train clock with a visible mechanism</p>
+      </a>
+      <a class="home-link" href="projects/prosthetic-arm-cad.html">
+        <h2>Prosthetic arm - CAD</h2>
+        <p>CAD exploration for a modular prosthetic forearm</p>
+      </a>
+    </div>
 
     <!-- EDIT: the three category links below. Each one needs an <h2> label
          and a one-line description underneath, and the href must point to
          that category's hub page. -->
+    <h3 class="subgroup">Browse by category</h3>
     <div class="home-links">
       <a class="home-link" href="frc.html">
         <h2>FRC</h2>

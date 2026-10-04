@@ -17,6 +17,12 @@ HOW TO ADD A NEW PROJECT:
        image: phone-stand.png     (optional - filename inside /images, used as the card
                                     thumbnail and the detail page's header image)
        custom: true               (optional - see "CUSTOM PAGES" below)
+       featured: true             (optional - pulls this project OUT of its category hub
+                                    page grid entirely, because it's instead hand-linked
+                                    near the top of index.html. The detail page itself is
+                                    still generated normally and still back-links to its
+                                    category hub. See the "EDIT: featured project links"
+                                    block in index.html to add/remove/reorder these.)
   3. Below the second --- line, write the project description as plain text
      or simple markdown (**bold**, [links](url), blank-line-separated paragraphs).
   4. Put the actual image file in /images if you used one.
@@ -118,6 +124,7 @@ def card_html(e):
 
 def build_hub(cat, entries):
     title, note = HUB_TITLES[cat]
+    entries = [e for e in entries if not e.get("featured")]
     progression = [e for e in entries if e.get("progression")]
     rest = [e for e in entries if not e.get("progression")]
 
