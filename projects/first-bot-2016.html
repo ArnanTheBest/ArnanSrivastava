@@ -21,7 +21,59 @@
   <!-- EDIT: project title -->
   <h1>First bot, 2016</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
-  <p class="desc detail-desc">My first robot. Built with almost no prior experience - rough, largely non-functional, and a genuine learning experience rather than a working machine. Kept here to show the starting point everything else built on.</p>
+  <p class="desc detail-desc">My first robot ever, built with almost no prior experience - and only ever built in CAD, never actually fabricated. It shows: the intake was broken, the electronics placement was genuinely bad, and the chassis had no rigidity. As designed, this robot would not have worked in real life. The one real success was the swerve modules, built specifically to handle rough terrain for that year's terrain-heavy game. Kept here as the starting point everything else was built on.</p>
+
+  <!-- EDIT: subsystem gallery. Each slot below is currently a placeholder copy of the
+       header image - replace images/first-bot-2016-<subsystem>.png with the real
+       subsystem photo/render whenever you have it, same filename, and it'll update here. -->
+  <h2 class="detail-subhead">Subsystems</h2>
+  <div class="gallery" id="first_bot_2016-gallery">
+    <img id="first_bot_2016-gallery-img" src="../images/first-bot-2016-drivebase.png" alt="first-bot-2016 subsystem">
+    <button class="gallery-btn prev" id="first_bot_2016-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="first_bot_2016-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="first_bot_2016-gallery-counter">1 / 4</p>
+  <p class="gallery-caption" id="first_bot_2016-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: 'first-bot-2016-drivebase.png', caption: 'Drivebase' },
+      { src: 'first-bot-2016-intake.png', caption: 'Intake' },
+      { src: 'first-bot-2016-shooter.png', caption: 'Shooter' },
+      { src: 'first-bot-2016-indexer.png', caption: 'Indexer' }
+    ];
+    var index = 0;
+    var img = document.getElementById('first_bot_2016-gallery-img');
+    var counter = document.getElementById('first_bot_2016-gallery-counter');
+    var caption = document.getElementById('first_bot_2016-gallery-caption');
+    var prevBtn = document.getElementById('first_bot_2016-gallery-prev');
+    var nextBtn = document.getElementById('first_bot_2016-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>

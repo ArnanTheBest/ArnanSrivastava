@@ -21,7 +21,7 @@
   <!-- EDIT: project title -->
   <h1>2019 bot</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
-  <p class="desc detail-desc">Third-generation robot, and a clear step up in fabrication: straight aluminum extrusion, a proper gearbox, and a telescoping elevator carrying a pivoting arm with a roller claw at the end for picking up and placing game pieces. The first build where the mechanisms were designed to do a specific job rather than just move.</p>
+  <p class="desc detail-desc">A solid practice robot, with an elevator, end effector, drivebase, and climb mechanism. This was also my first real introduction to block CAD, covered below.</p>
 
   <!-- EDIT: second section for this page only. Change the heading text, and the image below it (images/2019-bot-block-cad.png) the same way as the main image above. -->
   <h2 class="detail-subhead">My first time doing block CAD</h2>
@@ -29,6 +29,64 @@
     <img src="../images/2019-bot-block-cad.png" alt="2019 bot block CAD" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
     <span class="thumb-fallback">2019 bot block CAD</span>
   </div>
+  <p class="desc detail-desc">It went badly, honestly - I modeled things at too high a fidelity too early, which defeats the entire point of blocking a design out first. Still the robot where I learned why block CAD exists in the first place.</p>
+
+  <!-- EDIT: this id is linked to from other pages (e.g. the CADathon page) - keep the id
+       if you move this section, or update the links pointing at #block-cad-explainer. -->
+  <h2 class="detail-subhead" id="block-cad-explainer">What is block CAD?</h2>
+  <p class="desc detail-desc">Block CAD is modeling a mechanism as simple solids - blocks, cylinders, basic shapes standing in for real parts - before any actual part geometry exists. It lets you check layout, clearances, and motion quickly, without spending hours modeling bearings and fasteners for a design that might still change. The tradeoff is discipline: it only works if you actually keep it low-fidelity until the layout is locked in, which is exactly what I didn't do the first time.</p>
+
+  <!-- EDIT: subsystem gallery. Each slot below is currently a placeholder copy of the
+       header image - replace images/2019-bot-<subsystem>.png with the real
+       subsystem photo/render whenever you have it, same filename, and it'll update here. -->
+  <h2 class="detail-subhead">Subsystems</h2>
+  <div class="gallery" id="bot_2019-gallery">
+    <img id="bot_2019-gallery-img" src="../images/2019-bot-elevator.png" alt="2019-bot subsystem">
+    <button class="gallery-btn prev" id="bot_2019-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="bot_2019-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="bot_2019-gallery-counter">1 / 4</p>
+  <p class="gallery-caption" id="bot_2019-gallery-caption"></p>
 </div>
+
+<script>
+  (function () {
+    var images = [
+      { src: '2019-bot-elevator.png', caption: 'Elevator' },
+      { src: '2019-bot-end-effector.png', caption: 'End effector' },
+      { src: '2019-bot-drivebase.png', caption: 'Drivebase' },
+      { src: '2019-bot-climb.png', caption: 'Climb' }
+    ];
+    var index = 0;
+    var img = document.getElementById('bot_2019-gallery-img');
+    var counter = document.getElementById('bot_2019-gallery-counter');
+    var caption = document.getElementById('bot_2019-gallery-caption');
+    var prevBtn = document.getElementById('bot_2019-gallery-prev');
+    var nextBtn = document.getElementById('bot_2019-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
 </body>
 </html>

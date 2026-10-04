@@ -22,7 +22,19 @@
   <!-- EDIT: project title -->
   <h1>CADathon bot - Crystal Caverns</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
-  <p class="desc detail-desc">A CADathon entry built under the theme "Crystal Caverns." The slider above shows the design's progression from block CAD - laying out the mechanism's rough geometry and motion - to the fully detailed version with real parts, fasteners, and finish.</p>
+  <p class="desc detail-desc">A CADathon entry built under the theme "Crystal Caverns," with two other CADers - we won the Most Innovative Design award. I worked across every subsystem on this one: intake, elevator, end effector, shooter, drivebase, and bumpers. It was a blast working with them. The slider above shows the design's progression from <a href="2019-bot.html#block-cad-explainer">block CAD</a> to the fully detailed version.</p>
+
+  <!-- EDIT: subsystem gallery. Each slot below is currently a placeholder copy of the
+       full-detail CAD image - replace images/cadathon-bot-crystal-caverns-<subsystem>.png
+       with the real subsystem photo/render whenever you have it, same filename. -->
+  <h2 class="detail-subhead">Subsystems</h2>
+  <div class="gallery" id="cc_subsystems-gallery">
+    <img id="cc_subsystems-gallery-img" src="../images/cadathon-bot-crystal-caverns-intake.png" alt="cadathon-bot-crystal-caverns subsystem">
+    <button class="gallery-btn prev" id="cc_subsystems-gallery-prev" aria-label="Previous image">&larr;</button>
+    <button class="gallery-btn next" id="cc_subsystems-gallery-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <p class="gallery-counter" id="cc_subsystems-gallery-counter">1 / 6</p>
+  <p class="gallery-caption" id="cc_subsystems-gallery-caption"></p>
 
   <!-- EDIT: image gallery. To reuse this pattern on another page, copy this whole block
        plus the script tag below it, then change: the id="..." values (must be unique per
@@ -117,6 +129,47 @@
     var caption = document.getElementById('cc_gallery-gallery-caption');
     var prevBtn = document.getElementById('cc_gallery-gallery-prev');
     var nextBtn = document.getElementById('cc_gallery-gallery-next');
+
+    function update() {
+      img.src = '../images/' + images[index].src;
+      counter.textContent = (index + 1) + ' / ' + images.length;
+      if (images[index].caption) {
+        caption.textContent = images[index].caption;
+        caption.style.display = 'block';
+      } else {
+        caption.textContent = '';
+        caption.style.display = 'none';
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = (index + 1) % images.length;
+      update();
+    });
+
+    update();
+  })();
+</script>
+<script>
+  (function () {
+    var images = [
+      { src: 'cadathon-bot-crystal-caverns-intake.png', caption: 'Intake' },
+      { src: 'cadathon-bot-crystal-caverns-elevator.png', caption: 'Elevator' },
+      { src: 'cadathon-bot-crystal-caverns-end-effector.png', caption: 'End effector' },
+      { src: 'cadathon-bot-crystal-caverns-shooter.png', caption: 'Shooter' },
+      { src: 'cadathon-bot-crystal-caverns-drivebase.png', caption: 'Drivebase' },
+      { src: 'cadathon-bot-crystal-caverns-bumpers.png', caption: 'Bumpers' }
+    ];
+    var index = 0;
+    var img = document.getElementById('cc_subsystems-gallery-img');
+    var counter = document.getElementById('cc_subsystems-gallery-counter');
+    var caption = document.getElementById('cc_subsystems-gallery-caption');
+    var prevBtn = document.getElementById('cc_subsystems-gallery-prev');
+    var nextBtn = document.getElementById('cc_subsystems-gallery-next');
 
     function update() {
       img.src = '../images/' + images[index].src;

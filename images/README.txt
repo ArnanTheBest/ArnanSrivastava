@@ -36,10 +36,14 @@ block-electronics-gallery-1.png
 robotics-awards-gallery-1.jpg
 2025-frc-field-gallery-1.jpg
 pla-silk-gift-case-gallery-1.jpg
+cadathon-bot-crystal-caverns-intake.png
 cadathon-bot-crystal-caverns-gallery-1.jpg
 cadathon-bot-crystal-caverns-block.png
 cadathon-bot-crystal-caverns-full.png
 stub-roller-system-gallery-1.jpg
+2017-bot-hopper-shooter.png
 jewelry-stand-gallery-1.jpg
+first-bot-2016-drivebase.png
 hoyer-lift-gallery-1.jpg
 2019-bot-block-cad.png
+2019-bot-elevator.png
