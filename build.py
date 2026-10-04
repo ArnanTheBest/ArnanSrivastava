@@ -166,6 +166,7 @@ def build_hub(cat, entries):
 <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
+<img class="hub-bg" src="images/bg-milkyway.jpg" alt="">
 <div class="site-frame">
   <div class="hub-frame">
     <a class="hub-back" href="index.html">&larr; Home</a>
@@ -176,6 +177,7 @@ def build_hub(cat, entries):
 
     <footer>
       &copy; <span id="year"></span> Arnan Srivastava
+      <p class="hub-credit">Credit &amp; Copyright: Rogelio Bernal Andreo (Deep Sky Colors)</p>
     </footer>
   </div>
 </div>
