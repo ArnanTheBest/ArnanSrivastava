@@ -82,22 +82,30 @@ body {
 }
 
 .home-hero {
-  padding: 56px 28px 36px;
-  margin: 0 -28px;
+  padding: 56px 0 20px;
   max-width: 460px;
-  position: relative;
-  /* EDIT: soft dark vignette behind all the hero text, so it stays legible
-     over the busy night-sky photo. No fixed size here on purpose - an
-     unsized radial-gradient scales itself to the box's actual height, so
-     it still covers everything if more links get added below and the box
-     grows taller. Adjust the opacity numbers (the 3rd value in each
-     rgba()) to make it darker/lighter, or the % stops to make the fade
-     wider/narrower. */
-  background: radial-gradient(ellipse farthest-side at 35% 18%,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.45) 35%,
-    rgba(0, 0, 0, 0.22) 65%,
-    rgba(0, 0, 0, 0) 100%);
+}
+
+/* EDIT: black gradient outline hugging every letter on the home page, so
+   text stays legible over the busy night-sky photo without needing a
+   background panel behind it. The four 1px offsets give a crisp black
+   edge right against the letters, then the three blurred, decreasing-
+   opacity layers fade that edge outward like a gradient instead of
+   stopping abruptly. Scale all the values together to make the outline
+   thicker/thinner. */
+.home-hero h1,
+.home-hero p,
+.home-hero h3,
+.home-hero a,
+.home-hero span {
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.95),
+    1px -1px 0 rgba(0, 0, 0, 0.95),
+    -1px 1px 0 rgba(0, 0, 0, 0.95),
+    1px 1px 0 rgba(0, 0, 0, 0.95),
+    0 0 6px rgba(0, 0, 0, 0.85),
+    0 0 14px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(0, 0, 0, 0.4);
 }
 
 .home-hero h1 {
@@ -118,8 +126,6 @@ body {
   font-size: 14px;
   color: #b5b5ba;
   margin: 0 0 48px;
-  position: relative;
-  z-index: 1;
 }
 
 /* EDIT: add this modifier class (in addition to "contact") to any .contact
@@ -138,6 +144,41 @@ body {
 .home-links a {
   display: block;
   text-decoration: none;
+}
+
+/* EDIT: image shown above a featured project's title on the home page -
+   same visual language as the .card .thumb boxes on the hub pages (card-bg
+   fill, rounded corners, contain-fit image, text fallback if the image is
+   missing), just a bit taller since this is a single wide column instead
+   of a multi-column grid. Only add a <div class="thumb"> to a home-link if
+   you have a real image for it - plain text-only links (like the FRC / 3D
+   prints / Miscellaneous category row) don't need one. */
+.home-links .thumb {
+  height: 170px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-links .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.home-links .thumb .thumb-fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
 }
 
 .home-links h2 {
