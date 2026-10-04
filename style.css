@@ -82,8 +82,22 @@ body {
 }
 
 .home-hero {
-  padding: 56px 0 20px;
+  padding: 56px 28px 36px;
+  margin: 0 -28px;
   max-width: 460px;
+  position: relative;
+  /* EDIT: soft dark vignette behind all the hero text, so it stays legible
+     over the busy night-sky photo. No fixed size here on purpose - an
+     unsized radial-gradient scales itself to the box's actual height, so
+     it still covers everything if more links get added below and the box
+     grows taller. Adjust the opacity numbers (the 3rd value in each
+     rgba()) to make it darker/lighter, or the % stops to make the fade
+     wider/narrower. */
+  background: radial-gradient(ellipse farthest-side at 35% 18%,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.45) 35%,
+    rgba(0, 0, 0, 0.22) 65%,
+    rgba(0, 0, 0, 0) 100%);
 }
 
 .home-hero h1 {
@@ -104,6 +118,16 @@ body {
   font-size: 14px;
   color: #b5b5ba;
   margin: 0 0 48px;
+  position: relative;
+  z-index: 1;
+}
+
+/* EDIT: add this modifier class (in addition to "contact") to any .contact
+   paragraph that should sit snug under the one before it instead of
+   leaving the normal 48px gap - used to put the resume link directly
+   under the "let's talk" line. */
+.home-hero p.contact.contact-tight {
+  margin-bottom: 6px;
 }
 
 .home-hero p.contact a {
@@ -314,7 +338,7 @@ h3.subgroup {
 }
 
 footer {
-  margin-top: 56px;
+  margin-top: 112px;
   padding-top: 16px;
   border-top: 0.5px solid rgba(255, 255, 255, 0.15);
   font-size: 12px;
