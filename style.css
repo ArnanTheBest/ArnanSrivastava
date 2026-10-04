@@ -418,17 +418,27 @@ footer {
 }
 
 /* EDIT: add class="gallery photo-gallery" (instead of just class="gallery") when the
-   images are real photos rather than CAD renders - this fills the box completely
-   (no letterboxing) and drops the translucent card background, since that background
-   looks like an ugly visible box behind photos that don't match the gallery's aspect
-   ratio. Leave plain class="gallery" for CAD/render galleries. */
+   images are real photos rather than CAD renders - real photos come in all kinds of
+   aspect ratios (portrait, landscape, etc.), so instead of a fixed box this sizes
+   itself to each photo: no cropping, scaled up as large as it can go within the
+   width/height caps below, and centered. Leave plain class="gallery" for CAD/render
+   galleries, which are all rendered at the same fixed aspect ratio already. */
 .gallery.photo-gallery {
-  background: none;
-  border: none;
+  aspect-ratio: auto;
+  min-height: 200px;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery.photo-gallery img {
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .gallery-btn {
