@@ -18,7 +18,12 @@
   <!-- EDIT: project title -->
   <h1>Hoyer lift</h1>
   <!-- EDIT: project description. Replace the [Replace: ...] placeholder text with the real writeup. -->
-  <p class="desc detail-desc">A mobile patient lift, built from an off-the-shelf 3-ton hydraulic cylinder jack mechanism paired with a custom aluminum frame, caster base, and a sling suspended from carabiners. The 3D-printed parts are the custom fittings and mounts connecting the hydraulic jack hardware to the frame - the pieces that don't exist as a standard part and had to be designed to fit.</p>
+  <div class="desc detail-desc">
+<p>A mobile patient lift, built from an off-the-shelf 3-ton hydraulic cylinder jack mechanism paired with a custom aluminum frame, caster base, and a sling suspended from carabiners. The 3D-printed parts are the custom fittings and mounts connecting the hydraulic jack hardware to the frame - the pieces that don't exist as a standard part and had to be designed to fit.</p>
+<p>I modeled the whole lift in CAD before building anything, then built it from aluminum tube: cutting each piece to length, test-fitting the frame, and painting the tubes before final assembly. I also printed a jig to help with the build, and not everything went perfectly - one tube was miscut and ended up as scrap.</p>
+<p>Most of the custom printed work is where the off-the-shelf hardware meets the frame: the mount for the sling, the mount for the T-handle, and the fittings that connect the hydraulic jack to the structure. Each of those was designed around the real parts, since there was no standard piece that would fit.</p>
+<p>The presentation below walks through the project, and the gallery shows the final CAD, the build process, and the finished, painted lift.</p>
+</div>
 
   <!-- EDIT: embedded Google Slides presentation. To swap it, replace the URL in the
        iframe's src below with your own slides' embed link (Google Slides: File -> Share
@@ -39,7 +44,7 @@
     <button class="gallery-btn prev" id="hoyer_lift-gallery-prev" aria-label="Previous image">&larr;</button>
     <button class="gallery-btn next" id="hoyer_lift-gallery-next" aria-label="Next image">&rarr;</button>
   </div>
-  <p class="gallery-counter" id="hoyer_lift-gallery-counter">1 / 9</p>
+  <p class="gallery-counter" id="hoyer_lift-gallery-counter">1 / 10</p>
   <p class="gallery-caption" id="hoyer_lift-gallery-caption"></p>
   <p class="detail-credit">Credit &amp; Copyright: Processing - Robert Gendler, Roberto Colombari; Data - Hubble Tarantula Treasury, European Southern Observatory</p>
 </div>
@@ -47,16 +52,16 @@
 <script>
   (function () {
     var images = [
-      { src: 'hoyer-lift.png', caption: '' },
-      { src: 'hoyer-lift-gallery-1.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-2.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-3.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-4.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-5.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-6.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-8.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-9.jpg', caption: '' },
-      { src: 'hoyer-lift-gallery-10.jpg', caption: '' }
+      { src: 'hoyer-lift.png', caption: 'Final Hoyer CAD' },
+      { src: 'hoyer-lift-gallery-1.jpg', caption: '3D-printed jig example' },
+      { src: 'hoyer-lift-gallery-2.jpg', caption: 'Pre-painted tubes' },
+      { src: 'hoyer-lift-gallery-3.jpg', caption: 'Top view' },
+      { src: 'hoyer-lift-gallery-4.jpg', caption: 'Sling mount view' },
+      { src: 'hoyer-lift-gallery-5.jpg', caption: 'T-handle mounting view' },
+      { src: 'hoyer-lift-gallery-6.jpg', caption: 'Hydraulic view' },
+      { src: 'hoyer-lift-gallery-8.jpg', caption: 'Full Hoyer side view' },
+      { src: 'hoyer-lift-gallery-9.jpg', caption: 'Scrap tube from a miscut' },
+      { src: 'hoyer-lift-gallery-10.jpg', caption: 'Freshly painted Hoyer' }
     ];
     var index = 0;
     var img = document.getElementById('hoyer_lift-gallery-img');
