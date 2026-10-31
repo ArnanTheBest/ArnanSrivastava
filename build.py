@@ -170,7 +170,7 @@ def build_hub(cat, entries):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <img class="hub-bg" src="images/bg-milkyway.jpg" alt="">
@@ -202,7 +202,8 @@ def build_detail(cat, e):
     img = e.get("image")
     desc_html = markdown.markdown(e["body"])
     # tag paragraphs/headings with our CSS classes
-    desc_html = desc_html.replace("<p>", '<p class="desc detail-desc">')
+    # all paragraphs share ONE box (a wrapper div), not one box per paragraph
+    desc_html = '<div class="desc detail-desc">\n' + desc_html + '\n</div>'
     desc_html = desc_html.replace("<h2>", '<h2 class="detail-subhead">')
 
     if img:
@@ -241,7 +242,7 @@ def build_detail(cat, e):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=8">
+<link rel="stylesheet" href="../style.css?v=9">
 </head>
 <body>
 <img class="detail-bg" src="../images/bg-tarantula.jpg" alt="">

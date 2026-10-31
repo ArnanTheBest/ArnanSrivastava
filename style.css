@@ -452,6 +452,18 @@ footer {
   margin-right: auto;
 }
 
+div.detail-desc {
+  padding: 14px 18px;
+}
+
+div.detail-desc p {
+  margin: 0 0 14px;
+}
+
+div.detail-desc p:last-child {
+  margin-bottom: 0;
+}
+
 .detail-subhead {
   font-size: 24px;
   font-weight: 700;
