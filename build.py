@@ -170,7 +170,7 @@ def build_hub(cat, entries):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <img class="hub-bg" src="images/bg-milkyway.jpg" alt="">
@@ -241,16 +241,16 @@ def build_detail(cat, e):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=7">
+<link rel="stylesheet" href="../style.css?v=8">
 </head>
 <body>
-<img class="detail-bg" src="../images/bg-eclipse.jpg" alt="">
+<img class="detail-bg" src="../images/bg-tarantula.jpg" alt="">
 <div class="site-frame detail-frame">
   <a class="back-link" href="{back_href}">{back_label}</a>
   <h1>{title}</h1>
   {desc_html}
   {gallery_html}
-  <p class="detail-credit">Credit &amp; Copyright: Reinhold Wittich</p>
+  <p class="detail-credit">Credit &amp; Copyright: Processing - Robert Gendler, Roberto Colombari; Data - Hubble Tarantula Treasury, European Southern Observatory</p>
 </div>
 </body>
 </html>
