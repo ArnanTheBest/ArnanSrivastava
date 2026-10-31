@@ -16,65 +16,15 @@
   <h1>FRCElectrical - founder</h1>
   <p class="desc detail-desc">FRCElectrical.org is a resource site I founded for FRC teams on the electrical side of robot build - control system layout, making reliable connections, mechanism wiring, and the tools and crimps that actually work, plus an educator's handbook for teams teaching this to new members. I wrote most of the site myself, even though I'm not a programmer - two friends of mine, who are honestly some of the best people I know to work with, co-founded it with me and handled the actual programming, patiently teaching me how the code worked along the way so I could keep contributing. We've since built our own server and grown to a number of contributors beyond the three of us. Everything on it was written with zero AI involved.</p>
   <h2 class="detail-subhead">Gallery</h2>
-  <!-- EDIT: gallery. Uses photo-gallery so the box sizes itself to each image (the logo banner
-       and the diagrams are all different shapes). Each slide in the script below has its own
-       box colour (bg) - the banner uses its own blue, the diagrams a white background - and an
-       optional caption. Diagrams are from the FRCElectrical.org repo. -->
-  <div class="gallery photo-gallery" id="frcelectrical-gallery" style="background: #4272f5;">
-    <img id="frcelectrical-gallery-img" src="../images/frcelectrical.png" alt="FRCElectrical - founder">
-    <button class="gallery-btn prev" id="frcelectrical-gallery-prev" aria-label="Previous image">&larr;</button>
-    <button class="gallery-btn next" id="frcelectrical-gallery-next" aria-label="Next image">&rarr;</button>
+  <!-- EDIT: this image is a wide logo banner (not a 3296x2547 CAD render like most
+       other pages), so the box's aspect-ratio is overridden inline here to match
+       the banner's own 1640x664 shape - that way it fills the rounded box
+       completely with no empty letterbox bars above/below. If you swap this image
+       for one with a different shape, update the aspect-ratio number to match. -->
+  <div class="gallery" id="frcelectrical-gallery" style="aspect-ratio: 1640 / 664; background: #4272f5;">
+    <img src="../images/frcelectrical.png" alt="FRCElectrical - founder">
   </div>
-  <p class="gallery-counter" id="frcelectrical-gallery-counter">1 / 5</p>
-  <p class="gallery-caption" id="frcelectrical-gallery-caption"></p>
   <p class="detail-credit">Credit &amp; Copyright: Processing - Robert Gendler, Roberto Colombari; Data - Hubble Tarantula Treasury, European Southern Observatory</p>
 </div>
-
-<script>
-  (function () {
-    var images = [
-      { src: 'frcelectrical.png', caption: '', bg: '#4272f5' },
-      { src: 'frcelectrical-powerpole-quality.png', bg: '#ffffff',
-        caption: 'Anderson Powerpole crimp quality guide: one optimal crimp and three rejects - insulation under the crimp, insulation too far, and wire past the wire stop.' },
-      { src: 'frcelectrical-can-termination.png', bg: '#ffffff',
-        caption: 'Terminating a CAN bus: the twisted CAN pair joined through a Wago lever connector with a 120 ohm resistor, placed at the end of the loop.' },
-      { src: 'frcelectrical-molex-sl-pinout.png', bg: '#ffffff',
-        caption: 'The standard Molex SL CAN pinout, compatible with SystemCore and the Powerpole adapter boards: the yellow wire goes on pin 1, indicated by the arrow.' },
-      { src: 'frcelectrical-lineman-splice.png', bg: '#ffffff',
-        caption: "The lineman's splice (also called the NASA splice), a reliable and easy-to-use solder splice. Figure from NASA-STD-8739.4." }
-    ];
-    var index = 0;
-    var box = document.getElementById('frcelectrical-gallery');
-    var img = document.getElementById('frcelectrical-gallery-img');
-    var counter = document.getElementById('frcelectrical-gallery-counter');
-    var caption = document.getElementById('frcelectrical-gallery-caption');
-    var prevBtn = document.getElementById('frcelectrical-gallery-prev');
-    var nextBtn = document.getElementById('frcelectrical-gallery-next');
-
-    function update() {
-      img.src = '../images/' + images[index].src;
-      box.style.background = images[index].bg || '';
-      counter.textContent = (index + 1) + ' / ' + images.length;
-      if (images[index].caption) {
-        caption.textContent = images[index].caption;
-        caption.style.display = 'block';
-      } else {
-        caption.textContent = '';
-        caption.style.display = 'none';
-      }
-    }
-
-    prevBtn.addEventListener('click', function () {
-      index = (index - 1 + images.length) % images.length;
-      update();
-    });
-    nextBtn.addEventListener('click', function () {
-      index = (index + 1) % images.length;
-      update();
-    });
-
-    update();
-  })();
-</script>
 </body>
 </html>
