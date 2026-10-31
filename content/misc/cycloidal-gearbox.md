@@ -4,6 +4,7 @@ category: misc
 order: 2
 image: cycloidal-gearbox.png
 featured: true
+custom: true
 ---
 This project started as a challenge after I told a mentor I was interested in designing a cycloidal drive. The goal was to design a cycloidal gearbox sized to fit inside the hole in an RO-80 outrunner motor. A cycloidal drive uses an eccentric input to drive a lobed disc against a ring of pins, which gives a large reduction in a compact, coaxial package. That makes it a good fit for a tight space like this, but I had never designed one before.
 
