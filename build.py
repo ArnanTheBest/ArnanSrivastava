@@ -116,8 +116,13 @@ def card_html(e):
         )
     else:
         img_tag = ""
+    # optional `thumb_bg: "#rrggbb"` in the .md frontmatter: fills the card's
+    # rounded box behind a contain-fit image (for banner-shaped images whose
+    # own background is a solid colour, so no letterbox bars show)
+    bg = e.get("thumb_bg")
+    style = f' style="background:{bg}"' if bg else ""
     return (
-        f'<a class="card" href="projects/{slug}.html"><div class="thumb">{img_tag}'
+        f'<a class="card" href="projects/{slug}.html"><div class="thumb"{style}>{img_tag}'
         f'<span class="thumb-fallback">{title}</span></div><h4>{title}</h4></a>'
     )
 
