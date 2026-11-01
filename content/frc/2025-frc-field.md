@@ -1,8 +1,8 @@
 ---
 title: "Fabrication lead - 2025 FRC field"
 category: frc
-order: 12
-subgroup: "Other"
+order: 8
+subgroup: "2025 season"
 image: 2025-frc-field.png
 custom: true
 ---
